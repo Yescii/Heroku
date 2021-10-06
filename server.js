@@ -40,6 +40,11 @@ db.on("disconnected", () => console.log("mongod disconnected"));
 //use public folder for static assets
 app.use(express.static("public"));
 
+// Static files
+app.use(express.static("public"));
+// app.use("/css", express.static(__dirname + "public/css"));
+app.use(express.static(__dirname + "public"));
+
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
 app.use(express.json()); // returns middleware that only parses JSON - may or may not need it depending on your project
@@ -48,12 +53,14 @@ app.use(express.json()); // returns middleware that only parses JSON - may or ma
 app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 //___________________
-// Routes
+// Routes / Controllers
 //___________________
 //localhost:3000
-app.get("/", (req, res) => {
-  res.send("index.ejs");
-});
+const postController = require("./controllers/post.js");
+app.use("/post", postController);
+// app.get("/", (req, res) => {
+//   res.render("index.ejs");
+// });
 
 //___________________
 //Listener
