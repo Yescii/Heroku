@@ -1,17 +1,16 @@
-require("dotenv").config();
-
 //___________________
 //Dependencies
 //___________________
+require("dotenv").config();
 const express = require("express");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const app = express();
 const db = mongoose.connection;
+
 //___________________
 //Port
 //___________________
-// Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
 
 //___________________
@@ -20,9 +19,7 @@ const PORT = process.env.PORT || 3000;
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// Connect to Mongo &
-// Fix Depreciation Warnings from Mongoose
-// May or may not need these depending on your Mongoose version
+// Connect to Mongo
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -55,9 +52,9 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 //___________________
 // Routes / Controllers
 //___________________
-//localhost:3000
+//
 const postController = require("./controllers/post.js");
-app.use("/post", postController);
+app.use("/posta", postController);
 // app.get("/", (req, res) => {
 //   res.render("index.ejs");
 // });
