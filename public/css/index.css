@@ -14,13 +14,34 @@ body {
 /* */
 /* using flexbox to layout the content */
 nav {
+  position: relative;
   width: 100%;
-  height: 7vh;
+  height: 9vh;
   background-color: #90caf9;
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.a-logo {
+  position: absolute;
+  left: 0;
+}
+#logo {
+  width: 30%;
+
+  left: 0;
+  top: 0;
 }
 nav li {
   display: inline-block;
+  margin-right: 2rem;
+}
+nav a {
+  font-size: 1vw;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 /* */
 /* Nav Section END*/
@@ -34,8 +55,8 @@ nav li {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
-  height: 65vh;
-  margin-top: calc(100vw - 97%);
+  height: 70vh;
+  margin-top: calc(100vw - 99%);
 }
 /* giving a size, and margins to the descirption container and using flexbox to layout the content */
 .hero-desc-con {
@@ -65,17 +86,12 @@ nav li {
   z-index: 2;
 }
 .hero-desc-con h1 {
-  font-size: 350%;
+  /* font-size: 350%; */
+  font-size: 3vw;
 }
 
 .hero-desc-con h4 {
-  font-size: 190%;
-  width: 60%;
-  line-height: 2rem;
-}
-
-.hero-desc-con h4 {
-  font-size: 100%;
+  font-size: 0.9vw;
   width: 60%;
   line-height: 2rem;
   letter-spacing: 2px;
