@@ -1,24 +1,33 @@
+/* Universal defualt settings */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
+
 body {
   padding: 0 3rem;
 }
 
+/* Nav Section START*/
+/* */
+/* using flexbox to layout the content */
 nav {
   width: 100%;
   height: 7vh;
   background-color: #90caf9;
-
   display: flex;
 }
 nav li {
   display: inline-block;
 }
+/* */
+/* Nav Section END*/
 
+/* Hero Section START*/
+/* */
+/* giving a size, margins to the hero page and using flexbox to layout the content */
 .hero-page {
   position: relative;
   display: flex;
@@ -28,29 +37,56 @@ nav li {
   height: 65vh;
   margin-top: calc(100vw - 97%);
 }
-
+/* giving a size, and margins to the descirption container and using flexbox to layout the content */
 .hero-desc-con {
   margin-top: 0rem;
-  width: 54vw;
+  width: 59vw;
   height: 42vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-
-  margin-left: 15rem;
+  margin-left: 14rem;
   margin-right: -12rem;
 }
 
+/* styling hero a element  */
+.shr-btn {
+  font-size: 145%;
+  cursor: pointer;
+  color: white;
+  background-color: #90caf9;
+  font-weight: 700;
+  text-decoration: none;
+  bottom: 5px;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  z-index: 2;
+}
+.hero-desc-con h1 {
+  font-size: 350%;
+}
+
 .hero-desc-con h4 {
-  font-size: 1rem;
+  font-size: 190%;
   width: 60%;
   line-height: 2rem;
 }
 
+.hero-desc-con h4 {
+  font-size: 100%;
+  width: 60%;
+  line-height: 2rem;
+  letter-spacing: 2px;
+}
+
+/* svg place at the bottom of the hero page*/
 .wave {
   position: absolute;
   width: 100%;
   bottom: 0;
   opacity: 1;
 }
+/* */
+/* Hero Section START*/
